@@ -1,2 +1,2 @@
 # About Phozy
-Phozy comes from the *scyphozoa*, the scientific term for jellyfish. Jellyfish, it turns out, are the [most efficient swimmers in our oceans](https://www.nature.com/articles/nature.2013.13895). And Phozy, it turns out, is the most efficient way to upload videos to your YouTube account directly from WordPress.
+Phozy comes from the *scyphozoa*, scientific term for jellyfish. Jellyfish, it turns out, are the [most efficient swimmers in our oceans](https://www.nature.com/articles/nature.2013.13895). And Phozy, it turns out, is the most efficient way to upload videos to your YouTube account directly from WordPress.
