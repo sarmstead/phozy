@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name:       Phozy
  * Plugin URI:        https://github.com/sarmstead/phozy/
