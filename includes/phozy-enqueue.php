@@ -39,7 +39,7 @@ foreach ( $phozy_manifest_json as $key => $value ) {
     if ( preg_match( '@static/js/(.*)\.chunk\.js@', $key, $matches ) ) {
         if ( $matches && is_array( $matches ) && count( $matches ) === 2) {
             $chunk_file_name = "phozy-" . preg_replace( '/[^A-Za-z0-9_]/', '-', $matches[1] );
-            wp_enqueue_script( $name, get_site_url() . $value, array( 'erw-main' ), null, true );
+            wp_enqueue_script( $name, get_site_url() . $value, array( 'phozy-main' ), null, true );
         }
     }
 
@@ -47,7 +47,7 @@ foreach ( $phozy_manifest_json as $key => $value ) {
     if ( preg_match( '@static/css/(.*)\.chunk\.css@', $key, $matches ) ) {
         if ( $matches && is_array( $matches ) && count( $matches ) === 2) {
             $chunk_file_name = "phozy-" . preg_replace( '/[^A-Za-z0-9_]/', '-', $matches[1] );
-            wp_enqueue_style( $name, get_site_url() . $value, array( 'erw' ), null );
+            wp_enqueue_style( $name, get_site_url() . $value, array( 'phozy' ), null );
         }
     }
 }
