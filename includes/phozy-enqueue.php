@@ -26,3 +26,5 @@ $phozy_manifest_json = json_decode( file_get_contents( PHOZY_ASSET_MANIFEST ), t
 if ( isset( $phozy_manifest_json[ 'main.css' ] ) ){
     wp_enqueue_style( 'phozy', get_site_url() . $phozy_manifest_json[ 'main.css' ] );
 }
+
+wp_enqueue_script( 'phozy-runtime', get_site_url() . $phozy_manifest_json[ 'runtime-main.js' ], array(), null, true );
