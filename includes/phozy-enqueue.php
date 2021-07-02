@@ -35,11 +35,19 @@ wp_enqueue_script( 'phozy-main', get_site_url() . $phozy_manifest_json[ 'main.js
 
 # Loop through $phozy_manifest_json array and enqueue chunk files programmatically 
 foreach ( $phozy_manifest_json as $key => $value ) {
-    // Parse asset-manifest.json for keys named static/js/<has>.chunk.js. Enqueue these files after main.js.
+    // Parse asset-manifest.json for keys named static/js/<hash>.chunk.js. Enqueue these files after main.js.
     if ( preg_match( '@static/js/(.*)\.chunk\.js@', $key, $matches ) ) {
         if ( $matches && is_array( $matches ) && count( $matches ) === 2) {
             $chunk_file_name = "phozy-" . preg_replace( '/[^A-Za-z0-9_]/', '-', $matches[1] );
             wp_enqueue_script( $name, get_site_url() . $value, array( 'erw-main' ), null, true );
+        }
+    }
+
+    // Parse asset-manifest.json for keys named static/css/<hash>.chunk.css. Enqueue these files after each static/js/<hash>.chunk.js.
+    if ( preg_match( '@static/css/(.*)\.chunk\.css@', $key, $matches ) ) {
+        if ( $matches && is_array( $matches ) && count( $matches ) === 2) {
+            $chunk_file_name = "phozy-" . preg_replace( '/[^A-Za-z0-9_]/', '-', $matches[1] );
+            wp_enqueue_style( $name, get_site_url() . $value, array( 'erw' ), null );
         }
     }
 }
