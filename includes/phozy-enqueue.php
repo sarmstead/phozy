@@ -28,3 +28,6 @@ if ( isset( $phozy_manifest_json[ 'main.css' ] ) ){
 }
 
 wp_enqueue_script( 'phozy-runtime', get_site_url() . $phozy_manifest_json[ 'runtime-main.js' ], array(), null, true );
+
+# Enqueue main.js and register runtime script as dependency
+wp_enqueue_script( 'phozy-main', get_site_url() . $phozy_manifest_json[ 'main.js' ], array( 'phozy-runtime' ), null, true );
