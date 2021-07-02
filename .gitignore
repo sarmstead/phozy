@@ -1,0 +1,5 @@
+# dependencies 
+/phozy-react/node_modules
+
+# local machine
+.DS_Store
