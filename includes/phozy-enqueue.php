@@ -15,7 +15,7 @@ function phozy_parser() {
     }, 10, 2 );
 }
 
-add_action( 'init', phozy_parser() );
+add_action( 'init', 'phozy_parser' );
 
 // Enqueue React scripts from asset-manifest.json
 
