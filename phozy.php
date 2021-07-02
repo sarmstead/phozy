@@ -23,5 +23,5 @@ define ( 'PHOZY_ASSET_MANIFEST', PHOZY_REACT_PATH . '/build/asset-manifest.json'
 // Define includes directory path for additional PHP files
 define ( 'PHOZY_INCLUDES', plugin_dir_path( __FILE__ ) . '/includes' );
 
-// Require in enqueue file
+// Require in phozy-enqueue.php
 require_once( PHOZY_INCLUDES . '/phozy-enqueue.php' );
