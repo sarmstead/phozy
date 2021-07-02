@@ -16,3 +16,6 @@ function phozy_parser() {
 }
 
 add_action( 'init', phozy_parser() );
+
+// Enqueue React scripts from asset-manifest.json
+$phozy_manifest_json = json_decode( file_get_contents( PHOZY_ASSET_MANIFEST ), true )['files']; // Decode asset-manifest.json and access values at the key 'files'
