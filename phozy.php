@@ -25,3 +25,6 @@ define ( 'PHOZY_INCLUDES', plugin_dir_path( __FILE__ ) . '/includes' );
 
 // Require in phozy-enqueue.php
 require_once( PHOZY_INCLUDES . '/phozy-enqueue.php' );
+
+// Require in phozy-redirects.php
+require_once( PHOZY_INCLUDES . '/phozy-redirects.php' );
