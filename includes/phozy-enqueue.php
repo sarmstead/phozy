@@ -32,3 +32,14 @@ wp_enqueue_script( 'phozy-runtime', get_site_url() . $phozy_manifest_json[ 'runt
 
 # Enqueue main.js and register runtime script as dependency
 wp_enqueue_script( 'phozy-main', get_site_url() . $phozy_manifest_json[ 'main.js' ], array( 'phozy-runtime' ), null, true );
+
+# Loop through $phozy_manifest_json array and enqueue chunk files programmatically 
+foreach ( $phozy_manifest_json as $key => $value ) {
+    // Parse asset-manifest.json for keys named static/js/<has>.chunk.js. Enqueue these files after main.js.
+    if ( preg_match( '@static/js/(.*)\.chunk\.js@', $key, $matches ) ) {
+        if ( $matches && is_array( $matches ) && count( $matches ) === 2) {
+            $chunk_file_name = "phozy-" . preg_replace( '/[^A-Za-z0-9_]/', '-', $matches[1] );
+            wp_enqueue_script( $name, get_site_url() . $value, array( 'erw-main' ), null, true );
+        }
+    }
+}
