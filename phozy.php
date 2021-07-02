@@ -11,7 +11,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
- // If ABSPATH is defined continue script, else stop script
+// If ABSPATH is defined continue script, else stop script
 defined( 'ABSPATH' ) || die( 'Direct script access disallowed.' );
 
 // Define path to React application directory
