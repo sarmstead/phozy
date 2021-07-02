@@ -16,5 +16,9 @@ defined( 'ABSPATH' ) || die( 'Direct script access disallowed.' );
 
 // Define path to React application directory
 define( 'PHOZY_REACT_PATH', plugin_dir_path( __FILE__ ) . '/phozy-react' );
+
 // Define path to React manifest file to access list of React JS and CSS files
 define ( 'PHOZY_ASSET_MANIFEST', PHOZY_REACT_PATH . '/build/asset-manifest.json' );
+
+// Define includes directory path for additional PHP files
+define ( 'PHOZY_INCLUDES', plugin_dir_path( __FILE__ ) . '/includes' );
